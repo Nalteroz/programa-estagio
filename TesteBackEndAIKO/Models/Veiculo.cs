@@ -7,11 +7,11 @@ namespace TesteBackEndAIKO.Models
     {
         [Key]
         public long Id { get; private set; }
-        public string Name { get; private set; }
-        public string Modelo { get; private set; }
+        public string Name { get; set; }
+        public string Modelo { get; set; }
 
         [ForeignKey("Linha")]
-        public long LinhaId { get; private set; }
+        public long LinhaId { get; set; }
 
         public Veiculo(long id, long linhaId, string name = "", string modelo = "")
         {

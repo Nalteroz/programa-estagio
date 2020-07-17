@@ -10,7 +10,7 @@ namespace TesteBackEndAIKO.Models
         [Key]
         public long Id { get; private set; }
 
-        public string Name { get; private set; }
+        public string Name { get; set; }
 
         [NotMapped]
         public IEnumerable<Parada> Paradas { get; set; }

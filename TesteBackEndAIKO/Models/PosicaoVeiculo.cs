@@ -5,10 +5,10 @@ namespace TesteBackEndAIKO.Models
     public class PosicaoVeiculo
     {
         [Required]
-        public double Latitude { get; private set; }
+        public double Latitude { get; set; }
 
         [Required]
-        public double Longitude { get; private set; }
+        public double Longitude { get; set; }
 
         [Key]
         public long VeiculoId { get; private set; }
