@@ -8,10 +8,10 @@ namespace TesteBackEndAIKO.Controllers
     [ApiController]
     public class LinhasController : ControllerBase
     {
-        [HttpGet]
-        public ActionResult<IEnumerable<Linha>> GetAllLinhas()
-        {
+        //[HttpGet]
+        //public ActionResult<IEnumerable<Linha>> GetAllLinhas()
+        //{
             
-        }
+        //}
     }
 }

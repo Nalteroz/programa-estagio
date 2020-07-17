@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\Users\\Allan\\repos\\programa-estagio\\TesteBackEndAIKO\\TesteBackEndAIKO.csproj": {}
+    "D:\\Users\\Allan\\repos\\programa-estagio\\TesteBackEndAIKO\\TesteBackEndAIKO.csproj": {}
   },
   "projects": {
-    "d:\\Users\\Allan\\repos\\programa-estagio\\TesteBackEndAIKO\\TesteBackEndAIKO.csproj": {
+    "D:\\Users\\Allan\\repos\\programa-estagio\\TesteBackEndAIKO\\TesteBackEndAIKO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Users\\Allan\\repos\\programa-estagio\\TesteBackEndAIKO\\TesteBackEndAIKO.csproj",
+        "projectUniqueName": "D:\\Users\\Allan\\repos\\programa-estagio\\TesteBackEndAIKO\\TesteBackEndAIKO.csproj",
         "projectName": "TesteBackEndAIKO",
-        "projectPath": "d:\\Users\\Allan\\repos\\programa-estagio\\TesteBackEndAIKO\\TesteBackEndAIKO.csproj",
+        "projectPath": "D:\\Users\\Allan\\repos\\programa-estagio\\TesteBackEndAIKO\\TesteBackEndAIKO.csproj",
         "packagesPath": "C:\\Users\\ruama\\.nuget\\packages\\",
-        "outputPath": "d:\\Users\\Allan\\repos\\programa-estagio\\TesteBackEndAIKO\\obj\\",
+        "outputPath": "D:\\Users\\Allan\\repos\\programa-estagio\\TesteBackEndAIKO\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ruama\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -37,6 +37,30 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.6, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "Npgsql": {
+              "target": "Package",
+              "version": "[4.1.3.1, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

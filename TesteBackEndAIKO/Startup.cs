@@ -10,6 +10,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using TesteBackEndAIKO.Data;
+using Npgsql;
+using Microsoft.EntityFrameworkCore;
 
 namespace TesteBackEndAIKO
 {
@@ -25,7 +28,14 @@ namespace TesteBackEndAIKO
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<TesteDBContext>(opt => opt.UseNpgsql(Configuration.GetConnectionString("TesteAPIConnection")));
+
             services.AddControllers();
+
+            //services.AddScoped<ILinhaDB, >();
+            //services.AddScoped<IParadaDB, >();
+            //services.AddScoped<IPosicaoVeiculoDB, >();
+            //services.AddScoped<IVeiculoDB, >();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

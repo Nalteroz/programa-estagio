@@ -1,25 +1,44 @@
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Newtonsoft.Json;
 
 namespace TesteBackEndAIKO.Models
 {
     public class Linha
     {
+        [Key]
         public long Id { get; private set; }
-        public string Name { get; private set; }
-        public IEnumerable<Parada> Paradas { get; private set; }
 
-        public Linha(long id = long.MinValue, string name = "", IEnumerable<Parada> paradas = null)
+        public string Name { get; private set; }
+
+        [NotMapped]
+        public IEnumerable<Parada> Paradas { get; set; }
+
+        [Required]
+        public string ParadasString 
+        { 
+            get 
+            { 
+                return (Paradas != null) ? JsonConvert.SerializeObject(Paradas) : "";
+            }
+
+            set
+            {
+                ParadasString = value;
+                Paradas = JsonConvert.DeserializeObject<IEnumerable<Parada>>(value);
+            }
+        }
+
+        public Linha()
+        {
+            
+        }
+        public Linha(long id, IEnumerable<Parada> paradas, string name = "")
         {
             Id = id;
             Name = name;
             Paradas = paradas;
-        }
-
-        public void UpdateLinha(Linha linha)
-        {
-            Id = (linha.Id != long.MinValue) ? linha.Id : Id;
-            Name = (linha.Name != "") ? linha.Name : Name;
-            Paradas = (linha.Paradas != null) ? linha.Paradas: Paradas;
         }
     }
 }

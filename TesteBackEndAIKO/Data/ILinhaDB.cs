@@ -7,9 +7,9 @@ namespace TesteBackEndAIKO.Data
     {
         IEnumerable<Linha> GetAllLinhas();
         Linha GetLinha(Linha linha1);
-        bool CreateLinha(Linha linha);
-        bool UpdateLinha(Linha linha);
-        bool DeleteLinha(Linha linha);
+        int CreateLinha(Linha linha);
+        int UpdateLinha(Linha linha);
+        int DeleteLinha(Linha linha);
     }
 }
 

@@ -5,10 +5,10 @@ namespace TesteBackEndAIKO.Data
 {
     public interface IPosicaoVeiculoDB
     {
-        Linha GetPosicaoVeiculo(PosicaoVeiculo posicaoVeiculo);
-        bool CreatePosicaoVeiculo(PosicaoVeiculo posicaoVeiculo);
-        bool UpdatePosicaoVeiculo(PosicaoVeiculo posicaoVeiculo);
-        bool DeletePosicaoVeiculo(PosicaoVeiculo posicaoVeiculo);
+        PosicaoVeiculo GetPosicaoVeiculo(PosicaoVeiculo posicaoVeiculo);
+        int CreatePosicaoVeiculo(PosicaoVeiculo posicaoVeiculo);
+        int UpdatePosicaoVeiculo(PosicaoVeiculo posicaoVeiculo);
+        int DeletePosicaoVeiculo(PosicaoVeiculo posicaoVeiculo);
     }
 }
 
