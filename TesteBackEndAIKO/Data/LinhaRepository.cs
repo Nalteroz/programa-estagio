@@ -24,27 +24,14 @@ namespace TesteBackEndAIKO.Data
                 throw new System.Exception("ERRO ao adicionar linha ao banco de dados.");
             }
         }
-
-        public void DeleteLinha(long id)
-        {
-            try
-            {
-                _context.Linhas.Remove( _context.Linhas.First( x => x.Id == id ) );
-                _context.SaveChanges();
-            }
-            catch
-            {
-                throw new System.Exception("ERRO ao tentar remover linha com Id = " + id);
-            }
-        }
-
+        
         public IEnumerable<Linha> GetAllLinhas()
         {
             try
             {
                 return _context.Linhas.ToList();
             }
-            catch (System.Exception)
+            catch
             {
                 throw new System.Exception("ERRO ao tentar retornar todas as linhas.");
             }
@@ -59,6 +46,20 @@ namespace TesteBackEndAIKO.Data
             catch
             {
                 throw new System.Exception("Erro ao tentar recuperar linha com id " + id);
+            }
+        }
+
+        public void DeleteLinha(long id)
+        {
+            try
+            {
+                Linha linhaDB = GetLinha(id);
+                if(linhaDB != null) _context.Linhas.Remove( linhaDB );
+                _context.SaveChanges();
+            }
+            catch
+            {
+                throw new System.Exception("ERRO ao tentar remover linha com Id = " + id);
             }
         }
 

@@ -13,7 +13,7 @@ namespace TesteBackEndAIKO.Models
         public string Name { get; set; }
 
         [NotMapped]
-        public IEnumerable<Parada> Paradas { get; set; }
+        public List<Parada> Paradas { get; set; }
 
         [Required]
         public string ParadasString 
@@ -26,19 +26,15 @@ namespace TesteBackEndAIKO.Models
             set
             {
                 ParadasString = value;
-                Paradas = JsonConvert.DeserializeObject<IEnumerable<Parada>>(value);
+                Paradas = JsonConvert.DeserializeObject<List<Parada>>(value);
             }
         }
 
-        public Linha()
-        {
-            
-        }
-        public Linha(long id, IEnumerable<Parada> paradas, string name = "")
+        public Linha(long id, string name = "")
         {
             Id = id;
             Name = name;
-            Paradas = paradas;
+            Paradas = new List<Parada>();
         }
     }
 }

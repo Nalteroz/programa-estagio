@@ -9,8 +9,8 @@ using TesteBackEndAIKO.Data;
 namespace TesteBackEndAIKO.Migrations
 {
     [DbContext(typeof(TesteDBContext))]
-    [Migration("20200717022157_TesteDbMigration")]
-    partial class TesteDbMigration
+    [Migration("20200718005805_TesteAIKOAPIMigration")]
+    partial class TesteAIKOAPIMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -15,10 +15,10 @@ namespace TesteBackEndAIKO.Controllers
             _repository = repository;
         }
 
-        //[HttpGet]
-        //public ActionResult<IEnumerable<Linha>> GetAllLinhas()
-        //{
-            
-        //}
+        [HttpGet]
+        public ActionResult<IEnumerable<Linha>> GetAllLinhas()
+        {
+            return Ok(_repository.GetAllLinhas());   
+        }
     }
 }

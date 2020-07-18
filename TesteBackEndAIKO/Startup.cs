@@ -33,6 +33,9 @@ namespace TesteBackEndAIKO
             services.AddControllers();
 
             services.AddScoped<ILinhaRepository, LinhaRepository>();
+            services.AddScoped<IParadaRepository, ParadaRepository>();
+            services.AddScoped<IVeiculoRepository, VeiculoRepository>();
+            services.AddScoped<IPosicaoVeiculoRepository, PosicaoVeiculoRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

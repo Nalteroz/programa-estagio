@@ -26,18 +26,6 @@ namespace TesteBackEndAIKO.Data
             }
         }
 
-        public void DeleteParada(long id)
-        {
-            try
-            {
-                _context.Paradas.Remove( _context.Paradas.First( x => x.Id == id ) );
-            }
-            catch
-            {
-                throw new System.Exception("Erro ao tentar remover parada com id " + id);
-            }
-        }
-
         public IEnumerable<Parada> GetAllParadas()
         {
             return _context.Paradas.ToList();
@@ -46,6 +34,20 @@ namespace TesteBackEndAIKO.Data
         public Parada GetParada(long id)
         {
             return _context.Paradas.FirstOrDefault( x => x.Id == id );
+        }
+
+        public void DeleteParada(long id)
+        {
+            try
+            {
+                Parada paradaDB = GetParada(id);
+                if(paradaDB != null) _context.Paradas.Remove( paradaDB );
+                _context.SaveChanges();
+            }
+            catch
+            {
+                throw new System.Exception("Erro ao tentar remover parada com id " + id);
+            }
         }
 
         public void UpdateParada(Parada parada)

@@ -5,7 +5,7 @@ namespace TesteBackEndAIKO.Data
 {
     public interface IVeiculoRepository
     {
-        public IEnumerable<Parada> GetAllVeiculos();
+        public IEnumerable<Veiculo> GetAllVeiculos();
         public Veiculo GetVeiculo(long id);
         public void CreateVeiculo(Veiculo veiculo);
         public void UpdateVeiculo(Veiculo veiculo);

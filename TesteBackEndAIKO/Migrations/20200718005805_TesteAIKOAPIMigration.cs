@@ -3,7 +3,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace TesteBackEndAIKO.Migrations
 {
-    public partial class TesteDbMigration : Migration
+    public partial class TesteAIKOAPIMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
