@@ -7,9 +7,10 @@ namespace TesteBackEndAIKO.Data
     {
         public IEnumerable<PosicaoVeiculo> GetAllPosicaoVeiculos();
         public PosicaoVeiculo GetPosicaoVeiculo(long veiculoId);
-        public void CreatePosicaoVeiculo(PosicaoVeiculo posicaoVeiculo);
-        public void UpdatePosicaoVeiculo(PosicaoVeiculo posicaoVeiculo);
-        public void DeletePosicaoVeiculo(long veiculoId);
+        public bool CreatePosicaoVeiculo(PosicaoVeiculo posicaoVeiculo);
+        public bool DeletePosicaoVeiculo(long veiculoId);
+        public bool CheckPosicaoVeiculo(PosicaoVeiculo posicaoVeiculo);
+        public bool SaveChanges();
     }
 }
 

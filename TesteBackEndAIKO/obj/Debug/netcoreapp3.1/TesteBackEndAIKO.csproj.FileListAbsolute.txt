@@ -41,3 +41,8 @@ D:\Users\Allan\repos\programa-estagio\TesteBackEndAIKO\obj\Debug\netcoreapp3.1\T
 D:\Users\Allan\repos\programa-estagio\TesteBackEndAIKO\obj\Debug\netcoreapp3.1\TesteBackEndAIKO.genruntimeconfig.cache
 D:\Users\Allan\repos\programa-estagio\TesteBackEndAIKO\bin\Debug\netcoreapp3.1\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 D:\Users\Allan\repos\programa-estagio\TesteBackEndAIKO\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\Users\Allan\repos\programa-estagio\TesteBackEndAIKO\bin\Debug\netcoreapp3.1\AutoMapper.dll
+D:\Users\Allan\repos\programa-estagio\TesteBackEndAIKO\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\Users\Allan\repos\programa-estagio\TesteBackEndAIKO\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+D:\Users\Allan\repos\programa-estagio\TesteBackEndAIKO\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\Users\Allan\repos\programa-estagio\TesteBackEndAIKO\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll

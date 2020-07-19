@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using TesteBackEndAIKO.Models;
 using System.Linq;
+using Microsoft.AspNetCore.JsonPatch;
+using TesteBackEndAIKO.Dtos;
 
 namespace TesteBackEndAIKO.Data
 {
@@ -13,17 +15,14 @@ namespace TesteBackEndAIKO.Data
             _context = context;
         }
 
-        public void CreateParada(Parada parada)
+        public bool CreateParada(Parada parada)
         {
-            try
-            {
-                _context.Paradas.Add(parada);
-                _context.SaveChanges();
-            }
-            catch
-            {
-                throw new System.Exception("ERRO ao tentar adicionar a parada.");
-            }
+            if(parada == null || parada.Latitude == 0 || parada.Longitude == 0) 
+                return false;
+
+            _context.Paradas.Add(parada);
+            _context.SaveChanges();
+            return true;
         }
 
         public IEnumerable<Parada> GetAllParadas()
@@ -36,41 +35,18 @@ namespace TesteBackEndAIKO.Data
             return _context.Paradas.FirstOrDefault( x => x.Id == id );
         }
 
-        public void DeleteParada(long id)
+        public bool DeleteParada(long id)
         {
-            try
-            {
-                Parada paradaDB = GetParada(id);
-                if(paradaDB != null) _context.Paradas.Remove( paradaDB );
-                _context.SaveChanges();
-            }
-            catch
-            {
-                throw new System.Exception("Erro ao tentar remover parada com id " + id);
-            }
+            Parada paradaDB = GetParada(id);
+            if(paradaDB == null) return false;
+            _context.Paradas.Remove( paradaDB );
+            _context.SaveChanges();
+            return true;
         }
 
-        public void UpdateParada(Parada parada)
+        public bool SaveChanges()
         {
-            try
-            {
-                Parada paradaDB = GetParada(parada.Id);
-                if(paradaDB != null)
-                {
-                    paradaDB.Latitude = parada.Latitude;
-                    paradaDB.Longitude = parada.Longitude;
-                    paradaDB.Name = parada.Name;
-                    _context.SaveChanges();
-                }
-                else
-                {
-                    CreateParada(parada);
-                }
-            }
-            catch
-            {
-                throw new System.Exception("Erro ao tentar atualizar parada.");
-            }
+            return ( _context.SaveChanges() >= 0);
         }
     }
 }

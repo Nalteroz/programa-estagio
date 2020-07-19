@@ -12,77 +12,49 @@ namespace TesteBackEndAIKO.Data
             _context = context;
         }
 
-        public void CreateVeiculo(Veiculo veiculo)
+        public bool CreateVeiculo(Veiculo veiculo)
         {
-            try
-            {
-                _context.Veiculos.Add(veiculo);
-                _context.SaveChanges();
-            }
-            catch 
-            {
-                throw new System.Exception("ERRO ao tentar criar veiculo no banco de dados.");
-            }
+            if(_context.Linhas.FirstOrDefault(l => l.Id == veiculo.LinhaId) == null)
+                return false;
+
+            _context.Veiculos.Add(veiculo);
+            _context.SaveChanges();
+            return true;
         }
 
         public IEnumerable<Veiculo> GetAllVeiculos()
         {
-            try
-            {
-                return _context.Veiculos.ToList();
-            }
-            catch 
-            {
-                throw new System.Exception("ERRO ao tentar recuperar todos os veiculos do banco de dados.");
-            }
+            return _context.Veiculos.ToList();
         }
 
         public Veiculo GetVeiculo(long id)
         {
-            try
-            {
-                return _context.Veiculos.FirstOrDefault(x => x.Id == id);
-            }
-            catch 
-            {
-                throw new System.Exception("ERRO ao tentar recuperar no banco de dados o veiculo com id = " + id);
-            }
+            return _context.Veiculos.FirstOrDefault(x => x.Id == id);
         }
 
-        public void DeleteVeiculo(long id)
+        public bool DeleteVeiculo(long id)
         {
-            try
-            {
-                Veiculo veiculoDB = GetVeiculo(id);
-                if(veiculoDB != null)
-                {
-                    _context.Veiculos.Remove(veiculoDB);
-                    _context.SaveChanges();
-                }
-            }
-            catch
-            {
-                throw new System.Exception("ERRO ao tentar deletar no banco de dados o veiculo com id = " + id);
-            }
+            Veiculo veiculoDB = GetVeiculo(id);
+            if(veiculoDB == null)
+                return false;
+
+            _context.Veiculos.Remove(veiculoDB);
+            _context.SaveChanges();
+            return true;
+            
         }
 
-        public void UpdateVeiculo(Veiculo veiculo)
+        public bool CheckLinha(long linhaId)
         {
-            try
-            {
-                Veiculo veiculoDB = GetVeiculo(veiculo.Id);
-                if(veiculoDB != null)
-                {
-                    veiculoDB = veiculo;
-                    _context.SaveChanges();
-                }
-                else 
-                    CreateVeiculo(veiculo);
-            }
-            catch 
-            {
-                throw new System.Exception("ERRO ao tentar atualizar as informaçoes do veiculo com id = "+ veiculo.Id);
-            }
+            Linha linha = _context.Linhas.FirstOrDefault( l => l.Id == linhaId);
+            if(linha == null) return false;
+
+            return true;
+        }
+
+        public bool SaveChanges()
+        {
+            return ( _context.SaveChanges() >= 0);
         }
     }
 }

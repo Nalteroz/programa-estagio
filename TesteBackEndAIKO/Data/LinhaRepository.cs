@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TesteBackEndAIKO.Models;
 using System.Linq;
+using Newtonsoft.Json;
 
 namespace TesteBackEndAIKO.Data
 {
@@ -12,77 +13,58 @@ namespace TesteBackEndAIKO.Data
             _context = context;
         }
 
-        public void CreateLinha(Linha linha)
+        public bool CreateLinha(Linha linha)
         {
-            try
+            foreach(long id in linha.Paradas)
             {
-                _context.Linhas.Add(linha);
-                _context.SaveChanges();
+                if(_context.Paradas.FirstOrDefault(x => x.Id == id) == null)
+                    return false;
             }
-            catch
-            {
-                throw new System.Exception("ERRO ao adicionar linha ao banco de dados.");
-            }
+            _context.Linhas.Add(linha);
+            _context.SaveChanges();
+            return true;
         }
         
         public IEnumerable<Linha> GetAllLinhas()
         {
-            try
-            {
-                return _context.Linhas.ToList();
-            }
-            catch
-            {
-                throw new System.Exception("ERRO ao tentar retornar todas as linhas.");
-            }
+            return _context.Linhas.ToList();
         }
 
         public Linha GetLinha(long id)
         {
-            try
-            {
-                return _context.Linhas.FirstOrDefault(x => x.Id == id);
-            }
-            catch
-            {
-                throw new System.Exception("Erro ao tentar recuperar linha com id " + id);
-            }
+            return _context.Linhas.FirstOrDefault(x => x.Id == id);
         }
 
-        public void DeleteLinha(long id)
+        public bool DeleteLinha(long id)
+        {
+            Linha linhaDB = GetLinha(id);
+            if(linhaDB == null) return false;
+
+            _context.Linhas.Remove( linhaDB );
+            _context.SaveChanges();
+            return true;
+        }
+
+        public bool CheckParadas(string serializedParadas)
         {
             try
             {
-                Linha linhaDB = GetLinha(id);
-                if(linhaDB != null) _context.Linhas.Remove( linhaDB );
-                _context.SaveChanges();
-            }
-            catch
-            {
-                throw new System.Exception("ERRO ao tentar remover linha com Id = " + id);
-            }
-        }
-
-        public void UpdateLinha(Linha linha)
-        {
-            try
-            {
-                Linha linhaNoBD = GetLinha(linha.Id);
-                if(linhaNoBD != null)
+                foreach(long paradaId in JsonConvert.DeserializeObject<List<long>>(serializedParadas))
                 {
-                    linhaNoBD.Name = linha.Name;
-                    linhaNoBD.Paradas = linha.Paradas;
-                    _context.SaveChanges();
-                }
-                else
-                {
-                    CreateLinha(linha);
+                    if(_context.Paradas.FirstOrDefault(p => p.Id == paradaId) == null) 
+                        return false;
                 }
             }
             catch
             {
-                throw new System.Exception("Erro ao tentar atualizar linha no BD.");
+                return false;
             }
+
+            return true;
+        }
+        public bool SaveChanges()
+        {
+            return ( _context.SaveChanges() >= 0);
         }
     }
 }

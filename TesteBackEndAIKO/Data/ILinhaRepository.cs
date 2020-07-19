@@ -7,9 +7,10 @@ namespace TesteBackEndAIKO.Data
     {
         public IEnumerable<Linha> GetAllLinhas();
         public Linha GetLinha(long id);
-        public void CreateLinha(Linha linha);
-        public void UpdateLinha(Linha linha);
-        public void DeleteLinha(long id);
+        public bool CreateLinha(Linha linha);
+        public bool DeleteLinha(long id);
+        public bool CheckParadas(string serializedParadas);
+        public bool SaveChanges();
     }
 }
 

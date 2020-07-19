@@ -13,6 +13,8 @@ using Microsoft.Extensions.Logging;
 using TesteBackEndAIKO.Data;
 using Npgsql;
 using Microsoft.EntityFrameworkCore;
+using AutoMapper;
+using Newtonsoft.Json.Serialization;
 
 namespace TesteBackEndAIKO
 {
@@ -30,7 +32,11 @@ namespace TesteBackEndAIKO
         {
             services.AddDbContext<TesteDBContext>(opt => opt.UseNpgsql(Configuration.GetConnectionString("TesteAPIConnection")));
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson( s => {
+                s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            });
+
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddScoped<ILinhaRepository, LinhaRepository>();
             services.AddScoped<IParadaRepository, ParadaRepository>();

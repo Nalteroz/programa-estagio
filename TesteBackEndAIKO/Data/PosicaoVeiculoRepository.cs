@@ -13,84 +13,57 @@ namespace TesteBackEndAIKO.Data
             _context = context;;
         }
 
-        public void CreatePosicaoVeiculo(PosicaoVeiculo posicaoVeiculo)
+        public bool CreatePosicaoVeiculo(PosicaoVeiculo posicaoVeiculo)
         {
-            try
-            {
-                //Nao da pra criar uma posicao de um veiculo que nao existe no banco de dados.
-                Veiculo veiculoDB = _context.Veiculos.FirstOrDefault(x => x.Id == posicaoVeiculo.VeiculoId);
-                if(veiculoDB != null)
-                {
-                    _context.PosicaoVeiculos.Add(posicaoVeiculo);
-                    _context.SaveChanges();
-                }
-                else throw new System.Exception("Id do veiculo não existe no banco de dados.");
-            }
-            catch
-            {
-                throw new System.Exception("ERRO ao tentar criar posicaoveiculo no banco de dados.");
-            }
+            //Nao da pra criar uma posicao de um veiculo que nao existe no banco de dados.
+            if(!CheckPosicaoVeiculo(posicaoVeiculo))
+                return false;
+            
+            _context.PosicaoVeiculos.Add(posicaoVeiculo);
+            _context.SaveChanges();
+            return true;
         }
 
         public IEnumerable<PosicaoVeiculo> GetAllPosicaoVeiculos()
         {
-            try
-            {
-                return _context.PosicaoVeiculos.ToList();
-            }
-            catch 
-            {
-                throw new System.Exception("ERRO ao tentar recuparar todas as posicoes de veiculos no bando de dados.");
-            }
+            return _context.PosicaoVeiculos.ToList();
         }
 
         public PosicaoVeiculo GetPosicaoVeiculo(long veiculoId)
         {
-            try
-            {
-                return _context.PosicaoVeiculos.FirstOrDefault(x => x.VeiculoId == veiculoId);
-            }
-            catch
-            {
-                throw new System.Exception("Erro ao tentar achar a posicao do veiculo com id = " + veiculoId);
-            }
+            return _context.PosicaoVeiculos.FirstOrDefault(x => x.VeiculoId == veiculoId);
         }
 
-        public void DeletePosicaoVeiculo(long veiculoId)
+        public bool DeletePosicaoVeiculo(long veiculoId)
         {
-            try
-            {
-                PosicaoVeiculo posicaoVeiculoDB = GetPosicaoVeiculo(veiculoId);
-                if(posicaoVeiculoDB != null)
-                {
-                    _context.PosicaoVeiculos.Remove( posicaoVeiculoDB );
-                    _context.SaveChanges();
-                }
-            }
-            catch
-            {
-                throw new System.Exception("Erro ao tentar deletar a posicao do veiculo com id = " + veiculoId);
-            }
+            PosicaoVeiculo posicaoVeiculoDB = GetPosicaoVeiculo(veiculoId);
+            if(posicaoVeiculoDB == null)
+                return false;
+            
+            _context.PosicaoVeiculos.Remove( posicaoVeiculoDB );
+            _context.SaveChanges();
+            return true;
         }
 
-        public void UpdatePosicaoVeiculo(PosicaoVeiculo posicaoVeiculo)
+        public bool CheckPosicaoVeiculo(PosicaoVeiculo posicaoVeiculo)
         {
-            try
-            {
-                PosicaoVeiculo posicaoVeiculoDB = GetPosicaoVeiculo(posicaoVeiculo.VeiculoId);
-                if(posicaoVeiculo != null)
-                {
-                    posicaoVeiculoDB.Latitude = posicaoVeiculo.Latitude;
-                    posicaoVeiculoDB.Longitude = posicaoVeiculo.Longitude;
-                    _context.SaveChanges();
-                }
-                else 
-                    CreatePosicaoVeiculo(posicaoVeiculo);
-            }
-            catch 
-            {
-                throw new System.Exception("ERRO ao tentar atualizar a posicao do veiculo com id = "+ posicaoVeiculo.VeiculoId);
-            }
+            PosicaoVeiculo posicaoOnContext = _context.PosicaoVeiculos.FirstOrDefault( v => v.VeiculoId == posicaoVeiculo.VeiculoId);
+            if(posicaoOnContext != null) 
+                return false;
+            
+            Veiculo veiculo = _context.Veiculos.FirstOrDefault( v => v.Id == posicaoVeiculo.VeiculoId);
+            if(veiculo == null)
+                return false;
+                
+            if(posicaoVeiculo.Latitude == 0 || posicaoVeiculo.Longitude == 0)
+                return false;
+
+            return true;
+        }
+
+        public bool SaveChanges()
+        {
+            return ( _context.SaveChanges() >= 0);
         }
     }
 }

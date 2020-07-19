@@ -1,19 +1,15 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace TesteBackEndAIKO.Models
+namespace TesteBackEndAIKO.Dtos
 {
-    public class PosicaoVeiculo
+    public class ParadaCreationDto
     {
-        [Key]
-        public long Id { get; set; }
+        public string Name { get; set; }
 
         [Required]
         public double Latitude { get; set; }
 
         [Required]
         public double Longitude { get; set; }
-
-        [Required]
-        public long VeiculoId { get; set; }
     }
 }

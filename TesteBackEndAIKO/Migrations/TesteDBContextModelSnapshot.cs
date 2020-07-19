@@ -60,7 +60,7 @@ namespace TesteBackEndAIKO.Migrations
 
             modelBuilder.Entity("TesteBackEndAIKO.Models.PosicaoVeiculo", b =>
                 {
-                    b.Property<long>("VeiculoId")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
@@ -71,7 +71,10 @@ namespace TesteBackEndAIKO.Migrations
                     b.Property<double>("Longitude")
                         .HasColumnType("double precision");
 
-                    b.HasKey("VeiculoId");
+                    b.Property<long>("VeiculoId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
 
                     b.ToTable("PosicaoVeiculos");
                 });

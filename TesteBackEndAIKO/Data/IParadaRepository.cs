@@ -7,9 +7,9 @@ namespace TesteBackEndAIKO.Data
     {
         public IEnumerable<Parada> GetAllParadas();
         public Parada GetParada(long id);
-        public void CreateParada(Parada parada);
-        public void UpdateParada(Parada parada);
-        public void DeleteParada(long id);
+        public bool CreateParada(Parada parada);
+        public bool DeleteParada(long id);
+        public bool SaveChanges();
     }
 }
 

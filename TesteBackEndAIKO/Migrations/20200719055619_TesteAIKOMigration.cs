@@ -3,7 +3,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace TesteBackEndAIKO.Migrations
 {
-    public partial class TesteAIKOAPIMigration : Migration
+    public partial class TesteAIKOMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -40,14 +40,15 @@ namespace TesteBackEndAIKO.Migrations
                 name: "PosicaoVeiculos",
                 columns: table => new
                 {
-                    VeiculoId = table.Column<long>(nullable: false)
+                    Id = table.Column<long>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Latitude = table.Column<double>(nullable: false),
-                    Longitude = table.Column<double>(nullable: false)
+                    Longitude = table.Column<double>(nullable: false),
+                    VeiculoId = table.Column<long>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PosicaoVeiculos", x => x.VeiculoId);
+                    table.PrimaryKey("PK_PosicaoVeiculos", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
