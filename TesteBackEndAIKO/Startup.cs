@@ -15,6 +15,7 @@ using Npgsql;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
 using Newtonsoft.Json.Serialization;
+using Microsoft.OpenApi.Models;
 
 namespace TesteBackEndAIKO
 {
@@ -37,6 +38,11 @@ namespace TesteBackEndAIKO
             });
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+            services.AddSwaggerGen( c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Teste Back-End AIKO", Version = "v1" });
+            });
 
             services.AddScoped<ILinhaRepository, LinhaRepository>();
             services.AddScoped<IParadaRepository, ParadaRepository>();
@@ -61,6 +67,13 @@ namespace TesteBackEndAIKO
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Teste Back-End AIKO v1");
             });
         }
     }

@@ -47,15 +47,6 @@ namespace TesteBackEndAIKO.Controllers
                 return BadRequest();
         }
 
-        [HttpDelete("{veiculoId}")]
-        public ActionResult DeletePosicaoVeiculo(long veiculoId)
-        {
-            if(_repository.DeletePosicaoVeiculo(veiculoId))
-                return NoContent();
-            else
-                return NotFound();
-        }
-
         [HttpPatch("{veiculoId}")]
         public ActionResult UpdatePosicaoVeiculo(long veiculoId, JsonPatchDocument<PosicaoVeiculoCreationDto> patchDocument)
         {
@@ -76,6 +67,15 @@ namespace TesteBackEndAIKO.Controllers
             _mapper.Map(posicaoToUpdate, posicaoVeiculoBD);
             _repository.SaveChanges();
             return NoContent();
+        }
+
+        [HttpDelete("{veiculoId}")]
+        public ActionResult DeletePosicaoVeiculo(long veiculoId)
+        {
+            if(_repository.DeletePosicaoVeiculo(veiculoId))
+                return NoContent();
+            else
+                return NotFound();
         }
     }
 }

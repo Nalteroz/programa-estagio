@@ -34,8 +34,6 @@ D:\Users\Allan\repos\programa-estagio\TesteBackEndAIKO\bin\Debug\netcoreapp3.1\T
 D:\Users\Allan\repos\programa-estagio\TesteBackEndAIKO\bin\Debug\netcoreapp3.1\TesteBackEndAIKO.pdb
 D:\Users\Allan\repos\programa-estagio\TesteBackEndAIKO\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 D:\Users\Allan\repos\programa-estagio\TesteBackEndAIKO\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
-D:\Users\Allan\repos\programa-estagio\TesteBackEndAIKO\obj\Debug\netcoreapp3.1\TesteBackEndAIKO.csproj.CoreCompileInputs.cache
-D:\Users\Allan\repos\programa-estagio\TesteBackEndAIKO\obj\Debug\netcoreapp3.1\TesteBackEndAIKO.MvcApplicationPartsAssemblyInfo.cache
 D:\Users\Allan\repos\programa-estagio\TesteBackEndAIKO\obj\Debug\netcoreapp3.1\TesteBackEndAIKO.dll
 D:\Users\Allan\repos\programa-estagio\TesteBackEndAIKO\obj\Debug\netcoreapp3.1\TesteBackEndAIKO.pdb
 D:\Users\Allan\repos\programa-estagio\TesteBackEndAIKO\obj\Debug\netcoreapp3.1\TesteBackEndAIKO.genruntimeconfig.cache
@@ -46,3 +44,10 @@ D:\Users\Allan\repos\programa-estagio\TesteBackEndAIKO\bin\Debug\netcoreapp3.1\A
 D:\Users\Allan\repos\programa-estagio\TesteBackEndAIKO\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
 D:\Users\Allan\repos\programa-estagio\TesteBackEndAIKO\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 D:\Users\Allan\repos\programa-estagio\TesteBackEndAIKO\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+D:\Users\Allan\repos\programa-estagio\TesteBackEndAIKO\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+D:\Users\Allan\repos\programa-estagio\TesteBackEndAIKO\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+D:\Users\Allan\repos\programa-estagio\TesteBackEndAIKO\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Users\Allan\repos\programa-estagio\TesteBackEndAIKO\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Users\Allan\repos\programa-estagio\TesteBackEndAIKO\obj\Debug\netcoreapp3.1\TesteBackEndAIKO.csproj.CoreCompileInputs.cache
+D:\Users\Allan\repos\programa-estagio\TesteBackEndAIKO\obj\Debug\netcoreapp3.1\TesteBackEndAIKO.MvcApplicationPartsAssemblyInfo.cs
+D:\Users\Allan\repos\programa-estagio\TesteBackEndAIKO\obj\Debug\netcoreapp3.1\TesteBackEndAIKO.MvcApplicationPartsAssemblyInfo.cache
