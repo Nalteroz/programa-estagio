@@ -30,8 +30,10 @@ namespace TesteBackEndAIKO.Controllers
         [HttpGet("{id}", Name="GetLinhaById")]
         public ActionResult<Linha> GetLinhaById(long id)
         {
+            if(id < 0) return BadRequest();
+
             Linha linha = _repository.GetLinha(id);
-            if(linha == null) return BadRequest();
+            if(linha == null) return NotFound();
             else return Ok(linha);
         }
 
@@ -52,6 +54,8 @@ namespace TesteBackEndAIKO.Controllers
         [HttpPatch("{id}")]
         public ActionResult UpdateLinha(long id, JsonPatchDocument<LinhaCreationDto> patchDocument)
         {
+            if(id < 0) return BadRequest();
+
             Linha linhaDB = _repository.GetLinha(id);
             if(linhaDB == null) return NotFound();
 
@@ -73,6 +77,8 @@ namespace TesteBackEndAIKO.Controllers
         [HttpDelete("{id}")]
         public ActionResult DeleteLinha(long id)
         {
+            if(id < 0) return BadRequest();
+            
             if(_repository.DeleteLinha(id))
                 return NoContent();
             else

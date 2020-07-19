@@ -31,6 +31,8 @@ namespace TesteBackEndAIKO.Controllers
         [HttpGet("{id}", Name="GetParadaById")]
         public ActionResult<Parada> GetParadaById(long id)
         {
+            if(id < 0) return BadRequest();
+
             Parada parada = _repository.GetParada(id);
             if(parada != null)
                 return Ok(parada);
@@ -56,6 +58,8 @@ namespace TesteBackEndAIKO.Controllers
         [HttpPatch("{id}")]
         public ActionResult UpdateParada(int id, JsonPatchDocument<ParadaCreationDto> patchDocument)
         {
+            if(id < 0) return BadRequest();
+
             Parada paradaDB = _repository.GetParada(id);
             if(paradaDB == null) 
             {
@@ -77,6 +81,8 @@ namespace TesteBackEndAIKO.Controllers
         [HttpDelete("{id}")]
         public ActionResult DeleteParada(long id)
         {
+            if(id < 0) return BadRequest();
+            
             if(_repository.DeleteParada(id)) 
                 return NoContent();
             else

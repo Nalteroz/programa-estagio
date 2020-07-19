@@ -30,6 +30,8 @@ namespace TesteBackEndAIKO.Controllers
         [HttpGet("{id}", Name="GetVeiculoById")]
         public ActionResult<Veiculo> GetVeiculoById(long id)
         {
+            if(id < 0) return BadRequest();
+            
             Veiculo veiculo = _repository.GetVeiculo(id);
             if( veiculo == null)
                 return NotFound();
@@ -50,6 +52,8 @@ namespace TesteBackEndAIKO.Controllers
         [HttpPatch("{id}")]
         public ActionResult UpdateVeiculo(int id, JsonPatchDocument<VeiculoCreationDto> patchDocument)
         {
+            if(id < 0) return BadRequest();
+
             Veiculo veiculoBD = _repository.GetVeiculo(id);
             if(veiculoBD == null) return NotFound();
 
@@ -70,6 +74,8 @@ namespace TesteBackEndAIKO.Controllers
         [HttpDelete("{id}")]
         public ActionResult DeleteVeiculo(long id)
         {
+            if(id < 0) return BadRequest();
+
             if(_repository.DeleteVeiculo(id))
                 return NoContent();
             else
