@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ggPG9+Czu+4vQZqKJmhHUYer/LHeO2Us1b997vFypXnT9O3aLhDS87k5tSDKJX2OrnzqDLdlye6aLp1nOJ5aSg==",
+  "dgSpecHash": "GUu3ERJQgf0gZwy/xvI8Zh/u9NUtkin8yyH4lcLZBqOKIONeFKopK/DtbPrAU2/PekJ3cyQQQF2yKQaj3wMLXg==",
   "success": true,
-  "projectFilePath": "D:\\Users\\Allan\\repos\\programa-estagio\\TesteBackEndAIKO\\TesteBackEndAIKO.csproj",
+  "projectFilePath": "d:\\Users\\Allan\\repos\\programa-estagio\\TesteBackEndAIKO\\TesteBackEndAIKO.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ruama\\.nuget\\packages\\automapper\\10.0.0\\automapper.10.0.0.nupkg.sha512",
     "C:\\Users\\ruama\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.0.1\\automapper.extensions.microsoft.dependencyinjection.8.0.1.nupkg.sha512",

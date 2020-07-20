@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Users\\Allan\\repos\\programa-estagio\\TesteBackEndAIKO\\TesteBackEndAIKO.csproj": {}
+    "d:\\Users\\Allan\\repos\\programa-estagio\\TesteBackEndAIKO\\TesteBackEndAIKO.csproj": {}
   },
   "projects": {
-    "D:\\Users\\Allan\\repos\\programa-estagio\\TesteBackEndAIKO\\TesteBackEndAIKO.csproj": {
+    "d:\\Users\\Allan\\repos\\programa-estagio\\TesteBackEndAIKO\\TesteBackEndAIKO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Users\\Allan\\repos\\programa-estagio\\TesteBackEndAIKO\\TesteBackEndAIKO.csproj",
+        "projectUniqueName": "d:\\Users\\Allan\\repos\\programa-estagio\\TesteBackEndAIKO\\TesteBackEndAIKO.csproj",
         "projectName": "TesteBackEndAIKO",
-        "projectPath": "D:\\Users\\Allan\\repos\\programa-estagio\\TesteBackEndAIKO\\TesteBackEndAIKO.csproj",
+        "projectPath": "d:\\Users\\Allan\\repos\\programa-estagio\\TesteBackEndAIKO\\TesteBackEndAIKO.csproj",
         "packagesPath": "C:\\Users\\ruama\\.nuget\\packages\\",
-        "outputPath": "D:\\Users\\Allan\\repos\\programa-estagio\\TesteBackEndAIKO\\obj\\",
+        "outputPath": "d:\\Users\\Allan\\repos\\programa-estagio\\TesteBackEndAIKO\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ruama\\AppData\\Roaming\\NuGet\\NuGet.Config",
