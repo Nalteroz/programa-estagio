@@ -9,7 +9,7 @@ namespace TesteBackEndAIKO.Data
         public Linha GetLinha(long id);
         public bool CreateLinha(Linha linha);
         public bool DeleteLinha(long id);
-        public bool CheckParadas(string serializedParadas);
+        public bool CheckParadas(List<long> paradas);
         public bool SaveChanges();
     }
 }

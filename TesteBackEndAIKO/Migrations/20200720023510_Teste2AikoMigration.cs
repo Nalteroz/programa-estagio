@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace TesteBackEndAIKO.Migrations
 {
-    public partial class TesteAIKOMigration : Migration
+    public partial class Teste2AikoMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,7 +15,7 @@ namespace TesteBackEndAIKO.Migrations
                     Id = table.Column<long>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Name = table.Column<string>(nullable: true),
-                    ParadasString = table.Column<string>(nullable: false)
+                    Paradas = table.Column<List<long>>(nullable: true)
                 },
                 constraints: table =>
                 {

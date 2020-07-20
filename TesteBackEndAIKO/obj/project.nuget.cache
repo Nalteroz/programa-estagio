@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GUu3ERJQgf0gZwy/xvI8Zh/u9NUtkin8yyH4lcLZBqOKIONeFKopK/DtbPrAU2/PekJ3cyQQQF2yKQaj3wMLXg==",
+  "dgSpecHash": "crKCUZe692Ujs5oTM813XzA44MPG5ujzXfxuWSle/8pUg7aSlg7KhQdiymrpgrHz3XVap6mXm7cxKZZht5+udQ==",
   "success": true,
-  "projectFilePath": "d:\\Users\\Allan\\repos\\programa-estagio\\TesteBackEndAIKO\\TesteBackEndAIKO.csproj",
+  "projectFilePath": "D:\\Users\\Allan\\repos\\programa-estagio\\TesteBackEndAIKO\\TesteBackEndAIKO.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ruama\\.nuget\\packages\\automapper\\10.0.0\\automapper.10.0.0.nupkg.sha512",
     "C:\\Users\\ruama\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.0.1\\automapper.extensions.microsoft.dependencyinjection.8.0.1.nupkg.sha512",
@@ -29,7 +29,7 @@
     "C:\\Users\\ruama\\.nuget\\packages\\microsoft.extensions.options\\3.1.6\\microsoft.extensions.options.3.1.6.nupkg.sha512",
     "C:\\Users\\ruama\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.6\\microsoft.extensions.primitives.3.1.6.nupkg.sha512",
     "C:\\Users\\ruama\\.nuget\\packages\\microsoft.openapi\\1.1.4\\microsoft.openapi.1.1.4.nupkg.sha512",
-    "C:\\Users\\ruama\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\ruama\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
     "C:\\Users\\ruama\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\ruama\\.nuget\\packages\\npgsql\\4.1.4\\npgsql.4.1.4.nupkg.sha512",
     "C:\\Users\\ruama\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\3.1.4\\npgsql.entityframeworkcore.postgresql.3.1.4.nupkg.sha512",

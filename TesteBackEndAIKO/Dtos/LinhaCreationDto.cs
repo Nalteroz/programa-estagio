@@ -7,7 +7,6 @@ namespace TesteBackEndAIKO.Dtos
     {
         public string Name { get; set; }
 
-        [Required]
-        public string ParadasString { get; set; }
+        public List<long> Paradas { get; set;}
     }
 }

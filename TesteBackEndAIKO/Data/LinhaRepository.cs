@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using TesteBackEndAIKO.Models;
 using System.Linq;
-using Newtonsoft.Json;
 
 namespace TesteBackEndAIKO.Data
 {
@@ -45,11 +44,11 @@ namespace TesteBackEndAIKO.Data
             return true;
         }
 
-        public bool CheckParadas(string serializedParadas)
+        public bool CheckParadas(List<long> paradas)
         {
             try
             {
-                foreach(long paradaId in JsonConvert.DeserializeObject<List<long>>(serializedParadas))
+                foreach(long paradaId in paradas)
                 {
                     if(_context.Paradas.FirstOrDefault(p => p.Id == paradaId) == null) 
                         return false;

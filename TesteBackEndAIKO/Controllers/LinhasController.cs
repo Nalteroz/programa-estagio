@@ -66,7 +66,7 @@ namespace TesteBackEndAIKO.Controllers
                 return ValidationProblem(ModelState);
             }
 
-            if(!_repository.CheckParadas(linhaToUpdate.ParadasString))
+            if(!_repository.CheckParadas(linhaToUpdate.Paradas))
                 return BadRequest();
 
             _mapper.Map(linhaToUpdate, linhaDB);
