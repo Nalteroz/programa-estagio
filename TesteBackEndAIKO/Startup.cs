@@ -74,6 +74,7 @@ namespace TesteBackEndAIKO
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Teste Back-End AIKO v1");
+                c.RoutePrefix = "";
             });
         }
     }
